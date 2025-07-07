@@ -54,7 +54,7 @@ pipeline {
             }
             steps {
                 withKubeConfig([credentialsId: 'gcp-kubeconfig']){
-                    sh "kubectl -n lab-cgc set image deployments/backend-nest-test-cgc backend-nest-test-cgc=${dockerImagePrefix}/backend-nest-test-cgc:${BUILD_NUMBER}"
+                    sh "kubectl -n test-lab-cgc set image deployments/backend-nest-test-cgc backend-nest-test-cgc=${dockerImagePrefix}/backend-nest-test-cgc:${BUILD_NUMBER}"
                 }
             }
         }
